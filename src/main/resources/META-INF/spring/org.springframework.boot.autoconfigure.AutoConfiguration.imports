@@ -1,0 +1,2 @@
+vottega.security.mvc.SecurityServletAutoConfiguration
+vottega.security.webflux.SecurityWebFluxAutoConfiguration

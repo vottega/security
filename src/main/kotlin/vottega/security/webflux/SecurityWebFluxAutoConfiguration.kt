@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
+import org.springframework.core.annotation.Order
 import org.springframework.security.authentication.ReactiveAuthenticationManager
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder
 import org.springframework.security.config.web.server.ServerHttpSecurity
@@ -33,7 +34,7 @@ class SecurityWebFluxAutoConfiguration {
   fun reactiveAuthManager(): ReactiveAuthenticationManager = PassThroughAuthManager()
 
   @Bean
-  @ConditionalOnMissingBean
+  @Order(0)
   fun securityWebFilterChain(
     http: ServerHttpSecurity,
     converter: ServerAuthenticationConverter,

@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "vottega"
-version = "1.0.3"
+version = "1.0.14"
 
 java { toolchain { languageVersion.set(JavaLanguageVersion.of(17)) } }
 
@@ -17,6 +17,8 @@ dependencies {
 
   compileOnly("org.springframework.security:spring-security-web")
   compileOnly("org.springframework.security:spring-security-config")
+  compileOnly("org.springframework.boot:spring-boot-starter-web")
+  compileOnly("org.springframework.boot:spring-boot-starter-webflux")
 
   compileOnly("org.springframework:spring-web")
   compileOnly("jakarta.servlet:jakarta.servlet-api")

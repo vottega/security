@@ -1,2 +1,4 @@
 vottega.security.mvc.SecurityServletAutoConfiguration
 vottega.security.webflux.SecurityWebFluxAutoConfiguration
+vottega.security.mvc.argument.MvcArgumentResolverAutoConfiguration
+vottega.security.webflux.argument.WebfluxArgumentResolverConfiguration

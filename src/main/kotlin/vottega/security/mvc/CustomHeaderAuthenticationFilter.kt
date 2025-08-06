@@ -64,5 +64,10 @@ class CustomHeaderAuthenticationFilter(
 
   override fun shouldNotFilter(request: HttpServletRequest) =
     props.filterPaths
-      .none { pattern -> matcher.match(pattern, request.servletPath) }
+      .none { pattern ->
+        matcher.match(
+          pattern,
+          request.servletPath
+        )
+      } || props.permitPaths.any { pattern -> matcher.match(pattern, request.servletPath) }
 }

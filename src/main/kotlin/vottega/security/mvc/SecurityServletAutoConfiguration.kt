@@ -39,6 +39,7 @@ class SecurityServletAutoConfiguration {
       .formLogin { it.disable() }
       .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
       .authorizeHttpRequests {
+        it.requestMatchers(*props.permitPaths.toTypedArray()).permitAll()
         it.requestMatchers(*props.filterPaths.toTypedArray()).authenticated()
           .anyRequest().permitAll()
       }

@@ -53,6 +53,7 @@ class SecurityWebFluxAutoConfiguration {
       .formLogin { it.disable() }
       .logout { it.disable() }
       .authorizeExchange {
+        it.pathMatchers(*props.permitPaths.toTypedArray()).permitAll()
         it.pathMatchers(*props.filterPaths.toTypedArray()).authenticated()
         it.anyExchange().permitAll()
       }

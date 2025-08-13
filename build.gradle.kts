@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "vottega"
-version = "1.1.1"
+version = "1.1.2"
 
 java { toolchain { languageVersion.set(JavaLanguageVersion.of(17)) } }
 
